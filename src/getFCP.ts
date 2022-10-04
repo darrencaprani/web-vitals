@@ -25,7 +25,7 @@ export const getFCP = (onReport: ReportHandler) => {
   const metric = initMetric('FCP');
   const firstHidden = getFirstHidden();
 
-  let report: ReturnType<typeof bindReporter>;
+  let report: ReturnType<typeof bindReporter> = () => {};
 
   const entryHandler = (entry: PerformanceEntry) => {
     if (entry.name === 'first-contentful-paint') {
